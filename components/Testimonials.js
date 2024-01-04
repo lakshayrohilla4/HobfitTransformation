@@ -22,9 +22,9 @@ const Testimonials = () => {
                             <h1 className={'text-xl font-semibold'}>Kashvi Sharma</h1>
                         </div>
                         <p className={'text-lg'}>
-                            For 7 months, my struggle wasn't with full-body weight but specifically targeting belly fat
+                            For 7 months, my struggle wasn&apos;t with full-body weight but specifically targeting belly fat
                             and thighs. Finally, it worked with your program. I thought it was an impossible journey.
-                            However, your program, along with Coach Prajwal's guidance, surprised me. Thanks a ton for
+                            However, your program, along with Coach Prajwal&apos;s guidance, surprised me. Thanks a ton for
                             not only transforming me physically but also for the positive impact it had on different
                             parts of my life.
                         </p>
@@ -39,9 +39,9 @@ const Testimonials = () => {
                             <h1 className={'text-xl font-semibold'}>Kashvi Sharma</h1>
                         </div>
                         <p className={'text-lg'}>
-                            For 7 months, my struggle wasn't with full-body weight but specifically targeting belly fat
+                            For 7 months, my struggle wasn&apos;t with full-body weight but specifically targeting belly fat
                             and thighs. Finally, it worked with your program. I thought it was an impossible journey.
-                            However, your program, along with Coach Prajwal's guidance, surprised me. Thanks a ton for
+                            However, your program, along with Coach Prajwal&apos;s guidance, surprised me. Thanks a ton for
                             not only transforming me physically but also for the positive impact it had on different
                             parts of my life.
                         </p>
@@ -55,9 +55,9 @@ const Testimonials = () => {
                             <h1 className={'text-xl font-semibold'}>Kashvi Sharma</h1>
                         </div>
                         <p className={'text-lg'}>
-                            For 7 months, my struggle wasn't with full-body weight but specifically targeting belly fat
+                            For 7 months, my struggle wasn&apos;t with full-body weight but specifically targeting belly fat
                             and thighs. Finally, it worked with your program. I thought it was an impossible journey.
-                            However, your program, along with Coach Prajwal's guidance, surprised me. Thanks a ton for
+                            However, your program, along with Coach Prajwal&apos;s guidance, surprised me. Thanks a ton for
                             not only transforming me physically but also for the positive impact it had on different
                             parts of my life.
                         </p>
@@ -71,9 +71,9 @@ const Testimonials = () => {
                             <h1 className={'text-xl font-semibold'}>Kashvi Sharma</h1>
                         </div>
                         <p className={'text-lg'}>
-                            For 7 months, my struggle wasn't with full-body weight but specifically targeting belly fat
+                            For 7 months, my struggle wasn&apos;t with full-body weight but specifically targeting belly fat
                             and thighs. Finally, it worked with your program. I thought it was an impossible journey.
-                            However, your program, along with Coach Prajwal's guidance, surprised me. Thanks a ton for
+                            However, your program, along with Coach Prajwal&apos;s guidance, surprised me. Thanks a ton for
                             not only transforming me physically but also for the positive impact it had on different
                             parts of my life.
                         </p>
@@ -87,9 +87,9 @@ const Testimonials = () => {
                             <h1 className={'text-xl font-semibold'}>Kashvi Sharma</h1>
                         </div>
                         <p className={'text-lg'}>
-                            For 7 months, my struggle wasn't with full-body weight but specifically targeting belly fat
+                            For 7 months, my struggle wasn&apos;t with full-body weight but specifically targeting belly fat
                             and thighs. Finally, it worked with your program. I thought it was an impossible journey.
-                            However, your program, along with Coach Prajwal's guidance, surprised me. Thanks a ton for
+                            However, your program, along with Coach Prajwal&apos;s guidance, surprised me. Thanks a ton for
                             not only transforming me physically but also for the positive impact it had on different
                             parts of my life.
                         </p>
