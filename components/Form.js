@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import StepProgressBar from "@/components/StepProgressBar";
 import {Multiselect} from "multiselect-react-dropdown";
 import axios from "axios";
+import ClipLoader from "react-spinners/ClipLoader";
+const override = {
+    display: "block",
+    margin: "0 auto",
+    borderColor: "red",
+};
 
 const formSubmitUrl = "https://asia-southeast1-hobitapp-22cb6.cloudfunctions.net/writeToSheetHobfitTransformation";
+// const formSubmitUrl = "https://f00d-223-190-86-138.ngrok-free.app/hobitapp-22cb6/asia-southeast1/writeToSheetHobfitTransformation"
 
 const NameField = ({name, setName}) => {
     return (
@@ -13,11 +20,15 @@ const NameField = ({name, setName}) => {
             </label>
             <div className={'bg-[#f2f0f0] p-3 rounded-lg'}>
                 <input
+                    key={'name'}
+                    id={'name'}
                     type="text"
                     placeholder="Enter your name"
                     className="bg-[#f2f0f0] text-lg"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => {
+                        setName(e.target.value);
+                    }}
                 />
             </div>
         </div>
@@ -80,10 +91,14 @@ const PhoneField = ({countryCode, phone, setPhone}) => {
                 <p className={'text-black w-10 mt-[0.16rem]'}>
                     {countryCode}
                 </p>
-                <input type="text" placeholder="Enter your phone"
-                       className="bg-[#f2f0f0] text-lg "
-                       value={phone}
-                       onChange={(e) => setPhone(e.target.value)}
+                <input
+                    id={'phone'}
+                    key={'phone'}
+                    type="number"
+                    placeholder="Enter your phone"
+                    className="bg-[#f2f0f0] text-lg "
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                 />
             </div>
         </div>
@@ -274,19 +289,8 @@ const Question5 = ({answer5, setAnswer5}) => {
     )
 }
 
-const Form = () => {
-    const [name, setName] = useState('');
-    const [country, setCountry] = useState('India');
-    const [gender, setGender] = useState('Male');
-    const [phone, setPhone] = useState('');
-    const [page, setPage] = useState(1);
-    const [error, setError] = useState('');
-    const [answer1, setAnswer1] = useState('Very Serious');
-    const [answer2, setAnswer2] = useState([]);
-    const [answer3, setAnswer3] = useState([]);
-    const [answer4, setAnswer4] = useState([]);
-    const [answer5, setAnswer5] = useState([]);
 
+const StateForm = (props) => {
 
     const CountryCodesMap = {
         'India': '+91',
@@ -298,6 +302,68 @@ const Form = () => {
         'Hong Kong': '+852',
         'Canada': '+1',
     }
+
+    switch (props.page) {
+        case 1:
+            return (
+                <div
+                    className={'flex lg:flex-row flex-col lg:space-x-5 space-y-5 lg:space-y-0 w-11/12 lg:w-auto mt-10'}>
+                    <div className={'space-y-5'}>
+                        <NameField key={'name'} name={props.name} setName={props.setName}/>
+                        <CountryField country={props.country} setCountry={props.setCountry}/>
+                    </div>
+
+
+                    <div className={'space-y-5'}>
+                        <GenderField gender={props.gender} setGender={props.setGender}/>
+                        <PhoneField countryCode={CountryCodesMap[props.country]} phone={props.phone} setPhone={props.setPhone}/>
+                    </div>
+
+                </div>
+            )
+        case 2:
+            return (
+                <div className={'flex flex-col space-y-5 mt-10 lg:w-auto w-11/12'}>
+                    <Question1 answer1={props.answer1} setAnswer1={props.setAnswer1}/>
+                    <Question2 answer2={props.answer2} setAnswer2={props.setAnswer2}/>
+                </div>
+            )
+        case 3:
+            return (
+                <div className={'flex flex-col space-y-5 mt-10 lg:w-auto w-11/12'}>
+                    <Question3 answer3={props.answer3} setAnswer3={props.setAnswer3}/>
+                    <Question4 answer4={props.answer4} setAnswer4={props.setAnswer4}/>
+                </div>
+            )
+        case 4:
+            return (
+                <div className={'flex flex-col space-y-5 mt-10 lg:w-auto w-11/12'}>
+                    <Question5 answer5={props.answer5} setAnswer5={props.setAnswer5}/>
+                </div>
+            )
+    }
+}
+
+const Form = () => {
+    const [name, setName] = useState('');
+    const [country, setCountry] = useState('India');
+    const [gender, setGender] = useState('Male');
+    const [phone, setPhone] = useState('');
+    const [page, setPage] = useState(1);
+    const [error, setError] = useState('');
+    const [answer1, setAnswer1] = useState('Very Serious');
+    const [answer2, setAnswer2] = useState([]);
+    const [answer3, setAnswer3] = useState([]);
+    const [answer4, setAnswer4] = useState([]);
+    const [answer5, setAnswer5] = useState('I barely have any time for myself');
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        console.log('i am re rendering');
+    }, []);
+
+
+
 
     const handleNext = () => {
         switch (page) {
@@ -348,51 +414,43 @@ const Form = () => {
         }
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
+        setLoading(true);
+        // Prepare the form data
+        const formData = {
+            name,
+            country,
+            gender,
+            phone,
+            answer1,
+            answer2: answer2.map(item => item.name), // Convert objects to strings
+            answer3: answer3.map(item => item.name), // Convert objects to strings
+            answer4: answer4.map(item => item.name), // Convert objects to strings
+            answer5,
+        };
 
-    }
+        try {
+            // Make a POST request to the backend
+            const response = await axios.post(formSubmitUrl, formData, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer acd4cfd7157c9af0922acf9a826591a16655ed43697cb016d0effbe5954d02ba'
+                },
+            });
 
-    const StateForm = ({page}) => {
-        switch (page) {
-            case 1:
-                return (
-                    <div
-                        className={'flex lg:flex-row flex-col lg:space-x-5 space-y-5 lg:space-y-0 w-11/12 lg:w-auto mt-10'}>
-                        <div className={'space-y-5'}>
-                            <NameField name={name} setName={setName}/>
-                            <CountryField country={country} setCountry={setCountry}/>
-                        </div>
-
-
-                        <div className={'space-y-5'}>
-                            <GenderField gender={gender} setGender={setGender}/>
-                            <PhoneField countryCode={CountryCodesMap[country]} phone={phone} setPhone={setPhone}/>
-                        </div>
-
-                    </div>
-                )
-            case 2:
-                return (
-                    <div className={'flex flex-col space-y-5 mt-10 lg:w-full w-11/12'}>
-                        <Question1 answer1={answer1} setAnswer1={setAnswer1}/>
-                        <Question2 answer2={answer2} setAnswer2={setAnswer2}/>
-                    </div>
-                )
-            case 3:
-                return (
-                    <div className={'flex flex-col space-y-5 mt-10 lg:w-full w-11/12'}>
-                        <Question3 answer3={answer3} setAnswer3={setAnswer3}/>
-                        <Question4 answer4={answer4} setAnswer4={setAnswer4}/>
-                    </div>
-                )
-            case 4:
-                return (
-                    <div className={'flex flex-col space-y-5 mt-10 lg:w-full w-11/12'}>
-                        <Question5 answer5={answer5} setAnswer5={setAnswer5}/>
-                    </div>
-                )
+            // Handle the response here. For example, you can set a success message or redirect the user.
+            console.log(response.data);
+            // redirect to thank you page
+            window.location.href = '/thankyou';
+        } catch (error) {
+            // Handle the error here. For example, you can set an error message.
+            console.error(error);
+        } finally {
+            setLoading(false);
         }
     }
+
+
 
 
     return (
@@ -401,13 +459,34 @@ const Form = () => {
                 TAKE YOUR FIRST STEP <br/> TOWARDS CHANGE!!
             </div>
             <StepProgressBar step={page} totalSteps={4}/>
-            <StateForm page={page}/>
+            <StateForm
+                page={page}
+                name={name}
+                setName={setName}
+                country={country}
+                setCountry={setCountry}
+                gender={gender}
+                setGender={setGender}
+                phone={phone}
+                setPhone={setPhone}
+                answer1={answer1}
+                setAnswer1={setAnswer1}
+                answer2={answer2}
+                setAnswer2={setAnswer2}
+                answer3={answer3}
+                setAnswer3={setAnswer3}
+                answer4={answer4}
+                setAnswer4={setAnswer4}
+                answer5={answer5}
+                setAnswer5={setAnswer5}
+            />
             {error && <p className={'text-red-500'}>{error}</p>}
             <div className={'lg:w-1/2 mt-5 '}>
                 <button className={'bg-black text-white py-5 px-10 rounded-lg'}
                         onClick={handleNext}
                 >
-                    {page === 4 ? 'Submit' : 'Next'}
+                    {loading ? <ClipLoader color={'white'} loading={loading} css={override} size={15}/> : page === 4 ? 'Submit' : 'Next'}
+                    {/*{page === 4 ? 'Submit' : 'Next'}*/}
                 </button>
                 </div>
             </section>
