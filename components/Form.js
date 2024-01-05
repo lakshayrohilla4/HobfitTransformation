@@ -425,7 +425,10 @@ const Form = () => {
                 } else {
                     setError('');
                     setPage(page + 1);
-                    formTopRef.current.scrollIntoView({behavior: 'smooth'});
+                    formTopRef.current.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
                 }
                 break;
             case 2:
@@ -438,7 +441,10 @@ const Form = () => {
                 } else {
                     setError('');
                     setPage(page + 1);
-                    formTopRef.current.scrollIntoView({behavior: 'smooth'});
+                    formTopRef.current.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
                 }
                 break;
             case 3:
@@ -451,7 +457,10 @@ const Form = () => {
                 } else {
                     setError('');
                     setPage(page + 1);
-                    formTopRef.current.scrollIntoView({behavior: 'smooth'});
+                    formTopRef.current.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
                 }
                 break;
             case 4:

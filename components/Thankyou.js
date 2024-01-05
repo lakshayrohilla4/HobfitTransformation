@@ -27,7 +27,7 @@ const Thankyou = () => {
                     </h7>
                 </div>
 
-                <div className={'lg:w-1/2 w-full flex flex-col lg:pl-40 lg:absolute z-50 -right-20 top-10'}>
+                <div className={'lg:w-1/2 w-full flex flex-col lg:pl-40 right-0 lg:absolute z-50 top-10'}>
                     <Image src={'/assets/Mockup.png'} alt={'Hobfit Mockup'} width={400} height={400} />
                 </div>
 
