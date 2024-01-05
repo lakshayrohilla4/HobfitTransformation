@@ -13,7 +13,7 @@ export default function Home() {
         <>
             <Header />
             <Hero />
-            <div className={'flex lg:flex-row lg:flex-nowrap flex-wrap flex-col lg:mt-20 mt-10'}>
+            <div className={'flex lg:flex-row lg:flex-nowrap flex-wrap flex-col lg:mt-20 mt-5'}>
                 <Form />
                 <Stats />
             </div>

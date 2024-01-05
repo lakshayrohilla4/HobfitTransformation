@@ -42,8 +42,8 @@ const CountryField = ({country, setCountry}) => {
                 Country
             </label>
             <div
-                className={'bg-[#f2f0f0] p-[0.17rem] rounded-lg'}>
-                <select className="bg-[#f2f0f0] text-lg rounded-lg p-3"
+                className={'bg-[#f2f0f0] lg:p-[0.17rem] p-3 rounded-lg'}>
+                <select className="bg-[#f2f0f0] text-lg rounded-lg p-3 w-11/12"
                     value={country}
                     onChange={(e) => setCountry(e.target.value)}
                 >
@@ -67,8 +67,8 @@ const GenderField = ({gender, setGender}) => {
             <label className={'text-black text-lg'}>
                 Gender
             </label>
-            <div className={'bg-[#f2f0f0] p-[0.17rem] rounded-lg'}>
-                <select className="bg-[#f2f0f0] text-lg rounded-lg p-3"
+            <div className={'bg-[#f2f0f0] p-3 lg:p-[0.17rem] rounded-lg'}>
+                <select className="bg-[#f2f0f0] text-lg rounded-lg p-3 w-11/12"
                     value={gender}
                     onChange={(e) => setGender(e.target.value)}
                 >
@@ -455,7 +455,7 @@ const Form = () => {
 
     return (
         <section className={'items-center flex flex-wrap flex-col lg:w-1/2'}>
-            <div className="text-black font-black lg:text-4xl text-2xl leading-relaxed">
+            <div className="text-black font-black lg:text-4xl text-2xl leading-snug text-center">
                 TAKE YOUR FIRST STEP <br/> TOWARDS CHANGE!!
             </div>
             <StepProgressBar step={page} totalSteps={4}/>
@@ -481,8 +481,8 @@ const Form = () => {
                 setAnswer5={setAnswer5}
             />
             {error && <p className={'text-red-500'}>{error}</p>}
-            <div className={'lg:w-1/2 mt-5 '}>
-                <button className={'bg-black text-white py-5 px-10 rounded-lg'}
+            <div className={'lg:w-1/2 mt-5 flex w-full'}>
+                <button className={'bg-black font-black text-white py-5 ml-5 lg:ml-0 px-16 rounded-lg'}
                         onClick={handleNext}
                 >
                     {loading ? <ClipLoader color={'white'} loading={loading} css={override} size={15}/> : page === 4 ? 'Submit' : 'Next'}
