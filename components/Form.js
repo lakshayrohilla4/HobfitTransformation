@@ -18,7 +18,7 @@ const NameField = ({name, setName}) => {
             <label className={'text-black text-lg'}>
                 Name
             </label>
-            <div className={'bg-[#f2f0f0] p-3 rounded-lg'}>
+            <div className={'bg-[#f2f0f0] mt-1 p-3 rounded-lg'}>
                 <input
                     key={'name'}
                     id={'name'}
@@ -42,11 +42,12 @@ const CountryField = ({country, setCountry}) => {
                 Country
             </label>
             <div
-                className={'bg-[#f2f0f0] lg:p-[0.17rem] p-3 rounded-lg'}>
-                <select className="bg-[#f2f0f0] text-lg rounded-lg p-3 w-11/12"
+                className={'bg-[#f2f0f0] mt-1 lg:p-[0.17rem] p-3 rounded-lg'}>
+                <select className="bg-[#f2f0f0] text-lg rounded-lg p-3 w-full"
                     value={country}
                     onChange={(e) => setCountry(e.target.value)}
                 >
+                    <option value="">Select Country</option>
                     <option value="India">India</option>
                     <option value="USA">USA</option>
                     <option value="UAE">UAE</option>
@@ -67,11 +68,12 @@ const GenderField = ({gender, setGender}) => {
             <label className={'text-black text-lg'}>
                 Gender
             </label>
-            <div className={'bg-[#f2f0f0] p-3 lg:p-[0.17rem] rounded-lg'}>
-                <select className="bg-[#f2f0f0] text-lg rounded-lg p-3 w-11/12"
+            <div className={'bg-[#f2f0f0] mt-1 p-3 lg:p-[0.17rem] rounded-lg'}>
+                <select className="bg-[#f2f0f0] text-lg rounded-lg p-3 w-full"
                     value={gender}
                     onChange={(e) => setGender(e.target.value)}
                 >
+                    <option value="">Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Other">Other</option>
@@ -87,7 +89,7 @@ const PhoneField = ({countryCode, phone, setPhone}) => {
             <label className={'text-black text-lg'}>
                 Phone Number
             </label>
-            <div className={'bg-[#f2f0f0] p-3 rounded-lg flex flex-row space-x-1'}>
+            <div className={'bg-[#f2f0f0] mt-1 p-3 rounded-lg flex flex-row space-x-1'}>
                 <p className={'text-black w-10 mt-[0.16rem]'}>
                     {countryCode}
                 </p>
@@ -111,11 +113,12 @@ const Question1 = ({answer1, setAnswer1}) => {
                 <label className={'text-black text-lg'}>
                     How serious are you to transform yourself?
                 </label>
-                <div className={'bg-[#f2f0f0] p-[0.17rem] rounded-lg'}>
-                    <select className="bg-[#f2f0f0] text-lg rounded-lg p-3"
+                <div className={'bg-[#f2f0f0] mt-1 p-3 lg:p-[0.17rem] rounded-lg'}>
+                    <select className="bg-[#f2f0f0] text-lg rounded-lg p-3 w-full"
                             value={answer1}
                             onChange={(e) => setAnswer1(e.target.value)}
                     >
+                        <option value="">Select an option</option>
                         <option value="Very Serious">Very Serious</option>
                         <option value="Serious">Serious</option>
                         <option value="Not Serious">Not Serious</option>
@@ -126,22 +129,31 @@ const Question1 = ({answer1, setAnswer1}) => {
 }
 
 
-const Question2 = ({answer2, setAnswer2}) => {
+const Question2 = ({ answer2, setAnswer2 }) => {
+    const labelRef = useRef(null);
+
     const onSelect = (selectedList, selectedItem) => {
         setAnswer2([...selectedList]);
-    }
+        if (labelRef.current) {
+            labelRef.current.focus();
+            console.log(labelRef.current);
+        }
+    };
 
     const onRemove = (selectedList, removedItem) => {
         setAnswer2([...selectedList]);
-    }
-
+        if (labelRef.current) {
+            labelRef.current.focus();
+        }
+    };
 
     return (
         <div className={'flex flex-col'}>
             <label className={'text-black text-lg'}>
                 Do you have any of the following health conditions?
             </label>
-            <div className={'bg-[#f2f0f0] p-[0.17rem] rounded-lg w-96'}>
+            <input ref={labelRef} className={'w-0 h-0'}/>
+            <div className={'bg-[#f2f0f0] mt-1 p-[0.17rem] rounded-lg lg:w-96 w-[22.2rem]'}>
                 <Multiselect
                     options={[
                         {name: 'None', id: 1},
@@ -154,25 +166,38 @@ const Question2 = ({answer2, setAnswer2}) => {
                         {name: 'Arthritis', id: 8},
                         {name: 'Other', id: 9},
                     ]}
+                    style={{
+                        borderRadius: '0.5rem',
+                    }}
+                    showCheckbox={true}
+                    closeOnSelect={true}
                     selectedValues={answer2}
                     onSelect={onSelect}
                     onRemove={onRemove}
                     displayValue={'name'}
                     placeholder={'None'}
-                    className={'bg-[#f2f0f0] text-lg rounded-lg p-3'}
+                    className={'bg-[#f2f0f0] text-lg rounded-lg p-3 border-0'}
                 />
             </div>
         </div>
-    )
-}
+    );
+};
 
 const Question3 = ({answer3, setAnswer3}) => {
+    const labelRef = useRef(null);
+
     const onSelect = (selectedList, selectedItem) => {
         setAnswer3([...selectedList]);
+        if (labelRef.current) {
+            labelRef.current.focus();
+        }
     }
 
     const onRemove = (selectedList, removedItem) => {
         setAnswer3([...selectedList]);
+        if (labelRef.current) {
+            labelRef.current.focus();
+        }
     }
 
 
@@ -181,7 +206,8 @@ const Question3 = ({answer3, setAnswer3}) => {
             <label className={'text-black text-lg'}>
                 Have you attempted any of the following in the past to lose weight?
             </label>
-            <div className={'bg-[#f2f0f0] p-[0.17rem] rounded-lg w-96'}>
+            <input ref={labelRef} className={'w-0 h-0'}/>
+            <div className={'bg-[#f2f0f0] mt-1 p-[0.17rem] rounded-lg w-[22.2rem]'}>
                 <Multiselect
                     options={[
                         {name: 'Never tried to lose earlier', id: 1},
@@ -192,6 +218,7 @@ const Question3 = ({answer3, setAnswer3}) => {
                         {name: 'Yoga/ Dance/ Aerobics', id: 6},
                         {name: 'Other', id: 7},
                     ]}
+                    showCheckbox={true}
                     selectedValues={answer3}
                     onSelect={onSelect}
                     onRemove={onRemove}
@@ -205,12 +232,19 @@ const Question3 = ({answer3, setAnswer3}) => {
 }
 
 const Question4 = ({answer4, setAnswer4}) => {
+    const labelRef = useRef(null);
     const onSelect = (selectedList, selectedItem) => {
         setAnswer4([...selectedList]);
+        if (labelRef.current) {
+            labelRef.current.focus();
+        }
     }
 
     const onRemove = (selectedList, removedItem) => {
         setAnswer4([...selectedList]);
+        if (labelRef.current) {
+            labelRef.current.focus();
+        }
     }
 
     return (
@@ -218,7 +252,8 @@ const Question4 = ({answer4, setAnswer4}) => {
             <label className={'text-black text-lg'}>
                 What led to your weight gain?
             </label>
-            <div className={'bg-[#f2f0f0] p-[0.17rem] rounded-lg w-96'}>
+            <input ref={labelRef} className={'w-0 h-0'}/>
+            <div className={'bg-[#f2f0f0] mt-1 p-[0.17rem] rounded-lg w-[22.2rem]'}>
                 <Multiselect
                     options={[
                         {name: 'Busy work', id: 1},
@@ -228,6 +263,7 @@ const Question4 = ({answer4, setAnswer4}) => {
                         {name: 'Others', id: 5},
                     ]}
                     selectedValues={answer4}
+                    showCheckbox={true}
                     onSelect={onSelect}
                     onRemove={onRemove}
                     displayValue={'name'}
@@ -242,40 +278,19 @@ const Question4 = ({answer4, setAnswer4}) => {
 // question 5 is how busy are you on an average day?
 
 const Question5 = ({answer5, setAnswer5}) => {
-    const onSelect = (selectedList, selectedItem) => {
-        setAnswer5([...selectedList]);
-    }
-
-    const onRemove = (selectedList, removedItem) => {
-        setAnswer5([...selectedList]);
-    }
-
     return (
         <div className={'flex flex-col'}>
             <label className={'text-black text-lg'}>
                 How busy are you on an average day?
             </label>
-            <div className={'bg-[#f2f0f0] p-[0.17rem] rounded-lg w-11/12'}>
-                {/*<Multiselect*/}
-                {/*    options={[*/}
-                {/*        {name: 'I barely have any time for myself', id: 1},*/}
-                {/*        {name: 'I am busy but try to reserve some time each day to relax', id: 2},*/}
-                {/*        {name: 'I am not too busy and keep time some time for different things', id: 3},*/}
-                {/*        {name: 'My schedule is fairly open & flexible', id: 4},*/}
-                {/*    ]}*/}
-                {/*    selectedValues={answer5}*/}
-                {/*    onSelect={onSelect}*/}
-                {/*    onRemove={onRemove}*/}
-                {/*    displayValue={'name'}*/}
-                {/*    placeholder={'None'}*/}
-                {/*    className={'bg-[#f2f0f0] text-lg rounded-lg p-3'}*/}
-                {/*/>*/}
-                <select
-                    className={'bg-[#f2f0f0] text-lg rounded-lg p-3 w-11/12'}
+            <div className={'bg-[#f2f0f0] mt-1 p-3 lg:p-[0.17rem] rounded-lg'}>
+                <select className="bg-[#f2f0f0] text-lg rounded-lg p-3 w-full overflow-hidden"
                     value={answer5}
                     onChange={(e) => setAnswer5(e.target.value)}
                 >
-                    <option value="I barely have any time for myself">I barely have any time for myself</option>
+                    <option value="">Select an option</option>
+                    <option
+                        value="I barely have any time for myself">I barely have any time for myself</option>
                     <option value="I am busy but try to reserve some time each day to relax">I am busy but try to
                         reserve some time each day to relax
                     </option>
@@ -289,19 +304,43 @@ const Question5 = ({answer5, setAnswer5}) => {
     )
 }
 
+// question 6 is time frame in which we should call you, time frames are 9 to 12, 12 to 3, 3 to 6, 6 to 9
+
+const Question6 = ({answer6, setAnswer6}) => {
+    return (
+        <div className={'flex flex-col'}>
+            <label className={'text-black text-lg'}>
+                What is the best time to call you?
+            </label>
+            <div className={'bg-[#f2f0f0] mt-1 p-3 lg:p-[0.17rem] rounded-lg'}>
+                <select className="bg-[#f2f0f0] text-lg rounded-lg p-3 w-full"
+                    value={answer6}
+                    onChange={(e) => setAnswer6(e.target.value)}
+                >
+                    <option value="">Select an option</option>
+                    <option value="9AM to 12PM">9AM to 12PM</option>
+                    <option value="12PM to 3PM">12PM to 3PM</option>
+                    <option value="3PM to 6PM">3PM to 6PM</option>
+                    <option value="6PM to 9PM">6PM to 9PM</option>
+                </select>
+            </div>
+        </div>
+    )
+}
+
+const CountryCodesMap = {
+    'India': '+91',
+    'USA': '+1',
+    'UAE': '+971',
+    'Saudi Arabia': '+966',
+    'Qatar': '+974',
+    'Malaysia': '+60',
+    'Hong Kong': '+852',
+    'Canada': '+1',
+}
+
 
 const StateForm = (props) => {
-
-    const CountryCodesMap = {
-        'India': '+91',
-        'USA': '+1',
-        'UAE': '+971',
-        'Saudi Arabia': '+966',
-        'Qatar': '+974',
-        'Malaysia': '+60',
-        'Hong Kong': '+852',
-        'Canada': '+1',
-    }
 
     switch (props.page) {
         case 1:
@@ -339,6 +378,7 @@ const StateForm = (props) => {
             return (
                 <div className={'flex flex-col space-y-5 mt-10 lg:w-auto w-11/12'}>
                     <Question5 answer5={props.answer5} setAnswer5={props.setAnswer5}/>
+                    <Question6 answer6={props.answer6} setAnswer6={props.setAnswer6}/>
                 </div>
             )
     }
@@ -346,17 +386,19 @@ const StateForm = (props) => {
 
 const Form = () => {
     const [name, setName] = useState('');
-    const [country, setCountry] = useState('India');
-    const [gender, setGender] = useState('Male');
+    const [country, setCountry] = useState('');
+    const [gender, setGender] = useState('');
     const [phone, setPhone] = useState('');
     const [page, setPage] = useState(1);
     const [error, setError] = useState('');
-    const [answer1, setAnswer1] = useState('Very Serious');
+    const [answer1, setAnswer1] = useState('');
     const [answer2, setAnswer2] = useState([]);
     const [answer3, setAnswer3] = useState([]);
     const [answer4, setAnswer4] = useState([]);
-    const [answer5, setAnswer5] = useState('I barely have any time for myself');
+    const [answer5, setAnswer5] = useState('');
+    const [answer6, setAnswer6] = useState('');
     const [loading, setLoading] = useState(false);
+    const formTopRef = useRef(null);
 
     useEffect(() => {
         console.log('i am re rendering');
@@ -374,9 +416,16 @@ const Form = () => {
                 } else if (phone === '') {
                     setError('Please enter your phone number');
                     return;
+                } else if (country === '') {
+                    setError('Please select your country');
+                    return;
+                } else if (gender === '') {
+                    setError("Please select Gender");
+                    return;
                 } else {
                     setError('');
                     setPage(page + 1);
+                    formTopRef.current.scrollIntoView({behavior: 'smooth'});
                 }
                 break;
             case 2:
@@ -389,6 +438,7 @@ const Form = () => {
                 } else {
                     setError('');
                     setPage(page + 1);
+                    formTopRef.current.scrollIntoView({behavior: 'smooth'});
                 }
                 break;
             case 3:
@@ -401,10 +451,11 @@ const Form = () => {
                 } else {
                     setError('');
                     setPage(page + 1);
+                    formTopRef.current.scrollIntoView({behavior: 'smooth'});
                 }
                 break;
             case 4:
-                if (answer5.length === 0) {
+                if (answer5 === '') {
                     setError('Please select an answer');
                     return;
                 } else {
@@ -421,7 +472,7 @@ const Form = () => {
             name,
             country,
             gender,
-            phone,
+            phone: CountryCodesMap[country] + phone,
             answer1,
             answer2: answer2.map(item => item.name), // Convert objects to strings
             answer3: answer3.map(item => item.name), // Convert objects to strings
@@ -455,7 +506,7 @@ const Form = () => {
 
     return (
         <section className={'items-center flex flex-wrap flex-col lg:w-1/2'}>
-            <div className="text-black font-black lg:text-4xl text-2xl leading-snug text-center">
+            <div className="text-black font-black lg:text-4xl text-2xl leading-snug text-center" ref={formTopRef}>
                 TAKE YOUR FIRST STEP <br/> TOWARDS CHANGE!!
             </div>
             <StepProgressBar step={page} totalSteps={4}/>
@@ -479,6 +530,8 @@ const Form = () => {
                 setAnswer4={setAnswer4}
                 answer5={answer5}
                 setAnswer5={setAnswer5}
+                answer6={answer6}
+                setAnswer6={setAnswer6}
             />
             {error && <p className={'text-red-500'}>{error}</p>}
             <div className={'lg:w-1/2 mt-5 flex w-full'}>
