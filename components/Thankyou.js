@@ -4,15 +4,17 @@ import Link from "next/link";
 const Thankyou = () => {
     return (
         <div className={'bg-[#070b20] lg:bg-white mb-40'}>
-            <div className={'bg-[#070b20] lg:rounded-br-[200px] flex lg:flex-row flex-col lg:py-40 py-20'}>
+            <div className={'bg-[#070b20] lg:rounded-br-[200px] flex lg:flex-row flex-col lg:py-40 py-10'}>
                 <div className={'lg:w-1/2 w-full flex flex-col lg:pl-40 pl-10'}>
                     <Link href={'/'}>
-                    <span className={'flex flex-row items-center cursor-pointer text-white space-x-2'}>
-                        <Image src={'/assets/BackIcon.svg'} alt={'Back Icon'} width={30} height={30} style={'mr-5'} />
-                        {'    '}Back to Home
-                    </span>
+                        <div className={'flex flex-row items-center cursor-pointer text-white space-x-2'}>
+                            <Image src={'/assets/BackIcon.svg'} alt={'Back Icon'} width={30} height={30} style={'mr-5'} />
+                            <span className={'flex flex-row items-center cursor-pointer text-white space-x-2'}>
+                                Back to Home
+                            </span>
+                        </div>
                     </Link>
-                    <h1 className={'text-white font-bold lg:text-5xl text-3xl lg:leading-relaxed'}>
+                    <h1 className={'text-white font-bold lg:text-5xl text-3xl lg:leading-relaxed mt-5'}>
                         Thanks! You are about <br/>
                         to transform yourself <br />
                         for good.
