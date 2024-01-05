@@ -472,12 +472,13 @@ const Form = () => {
             name,
             country,
             gender,
-            phone: CountryCodesMap[country] + phone,
+            phone: '+' + CountryCodesMap[country] + phone,
             answer1,
             answer2: answer2.map(item => item.name), // Convert objects to strings
             answer3: answer3.map(item => item.name), // Convert objects to strings
             answer4: answer4.map(item => item.name), // Convert objects to strings
             answer5,
+            answer6,
         };
 
         try {
