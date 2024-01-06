@@ -28,6 +28,9 @@ const Footer = () => {
                     <Link href={'https://www.linkedin.com/company/53480889/'} className={'cursor-pointer'} target={'_blank'}>
                         <Image src={'assets/Linkedin.svg'} alt={'Linkedin'} width={30} height={30} />
                     </Link>
+                    <Link href={'https://wa.me/918076258737'} className={'cursor-pointer'} target={'_blank'}>
+                        <Image src={'assets/Whatsapp.svg'} alt={'WhatsApp'} width={30} height={30} />
+                    </Link>
                 </div>
             </div>
         </footer>

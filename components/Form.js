@@ -153,7 +153,7 @@ const Question2 = ({ answer2, setAnswer2 }) => {
                 Do you have any of the following health conditions?
             </label>
             <input ref={labelRef} className={'w-0 h-0'}/>
-            <div className={'bg-[#f2f0f0] mt-1 p-[0.17rem] rounded-lg lg:w-96 w-[22.2rem]'}>
+            <div className={'bg-[#f2f0f0] mt-1 p-[0.17rem] rounded-lg lg:w-full w-[22.2rem]'}>
                 <Multiselect
                     options={[
                         {name: 'None', id: 1},
@@ -204,7 +204,7 @@ const Question3 = ({answer3, setAnswer3}) => {
     return (
         <div className={'flex flex-col'}>
             <label className={'text-black text-lg'}>
-                Have you attempted any of the following in the past to lose weight?
+                Have you attempted any of the following<br/>in the past to lose weight?
             </label>
             <input ref={labelRef} className={'w-0 h-0'}/>
             <div className={'bg-[#f2f0f0] mt-1 p-[0.17rem] rounded-lg w-[22.2rem]'}>
@@ -425,10 +425,12 @@ const Form = () => {
                 } else {
                     setError('');
                     setPage(page + 1);
-                    formTopRef.current.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center'
-                    });
+                    // don't scroll for desktop
+                    if (window.innerWidth < 1024)
+                        formTopRef.current.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
                 }
                 break;
             case 2:
@@ -441,10 +443,11 @@ const Form = () => {
                 } else {
                     setError('');
                     setPage(page + 1);
-                    formTopRef.current.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center'
-                    });
+                    if (window.innerWidth < 1024)
+                        formTopRef.current.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
                 }
                 break;
             case 3:
@@ -457,10 +460,11 @@ const Form = () => {
                 } else {
                     setError('');
                     setPage(page + 1);
-                    formTopRef.current.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center'
-                    });
+                    if (window.innerWidth < 1024)
+                        formTopRef.current.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
                 }
                 break;
             case 4:
@@ -492,7 +496,7 @@ const Form = () => {
 
         try {
             // Make a POST request to the backend
-            const response = await axios.post(formSubmitUrl, formData, {
+            const response = axios.post(formSubmitUrl, formData, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer acd4cfd7157c9af0922acf9a826591a16655ed43697cb016d0effbe5954d02ba'
@@ -516,7 +520,7 @@ const Form = () => {
 
     return (
         <section className={'items-center flex flex-wrap flex-col lg:w-1/2'}>
-            <div className="text-black font-black lg:text-4xl text-2xl leading-snug text-center" ref={formTopRef}>
+            <div className="text-black font-black lg:text-3xl text-2xl leading-snug text-center" ref={formTopRef}>
                 TAKE YOUR FIRST STEP <br/> TOWARDS CHANGE!!
             </div>
             <StepProgressBar step={page} totalSteps={4}/>
@@ -544,8 +548,8 @@ const Form = () => {
                 setAnswer6={setAnswer6}
             />
             {error && <p className={'text-red-500'}>{error}</p>}
-            <div className={'lg:w-1/2 mt-5 flex w-full'}>
-                <button className={'bg-black font-black text-white py-5 ml-5 lg:ml-0 px-16 rounded-lg'}
+            <div className={'lg:w-full mt-5 flex w-full'}>
+                <button className={'bg-black font-black text-white py-5 ml-5 lg:mx-auto px-16 rounded-lg'}
                         onClick={handleNext}
                 >
                     {loading ? <ClipLoader color={'white'} loading={loading} css={override} size={15}/> : page === 4 ? 'Submit' : 'Next'}
