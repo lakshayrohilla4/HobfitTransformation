@@ -47,7 +47,7 @@ const Testimonials = () => {
                             <h1 className={'text-xl font-semibold'}>Ananya Singh</h1>
                         </div>
                         <p className={'text-lg'}>
-                            My sister does Zumba on your platform, and she recommended yoga to me. I can't express how calm I feel now! Dealing with anger due to constant overthinking, it has genuinely helped me. Struggling with shortness of breath, I love how it aids me. Thank you, HobFit.
+                            My sister does Zumba on your platform, and she recommended yoga to me. I can&apos;t express how calm I feel now! Dealing with anger due to constant overthinking, it has genuinely helped me. Struggling with shortness of breath, I love how it aids me. Thank you, HobFit.
                         </p>
                     </div>
 
@@ -71,7 +71,7 @@ const Testimonials = () => {
                             <h1 className={'text-xl font-semibold'}>Priya Singh</h1>
                         </div>
                         <p className={'text-lg'}>
-                            Struggled with back pain for 4 months, my focus wasn’t just on general fitness, but on addressing persistent back pain. Your program proved to be a game-changer. Doubts turned into relief. Thanks a bunch for easing my back pain and bringing positivity to my life.
+                            Struggled with back pain for 4 months, my focus wasn&apos;t just on general fitness, but on addressing persistent back pain. Your program proved to be a game-changer. Doubts turned into relief. Thanks a bunch for easing my back pain and bringing positivity to my life.
                         </p>
                     </div>
 
