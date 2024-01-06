@@ -46,26 +46,26 @@ class MyDocument extends Document {
                     <meta name="keywords"
                           content="rapid weight loss, elite fitness, science-backed strategies, accelerated fat burn, premium wellness tips"/>
 
-                    <meta name="google-site-verification" content="Your Google Verification Code"/>
-                    <meta name="msvalidate.01" content="Your Bing Verification Code"/>
+                    {/*<meta name="google-site-verification" content="Your Google Verification Code"/>*/}
+                    {/*<meta name="msvalidate.01" content="Your Bing Verification Code"/>*/}
 
 
-                    <meta name="google-site-verification" content="Your Google Search Console Verification Code"/>
+                    {/*<meta name="google-site-verification" content="Your Google Search Console Verification Code"/>*/}
 
-                    <meta name="mobileoptimized" content="width"/>
+                    {/*<meta name="mobileoptimized" content="width"/>*/}
 
                     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
 
-                    <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
-                    <link rel="schema.DCMI" href="http://purl.org/dc/dcmitype/"/>
-                    <link rel="schema.AGGREGATION" href="http://purl.org/net/agreemedia/"/>
-                    <link rel="schema.OpenSearch"
-                          href="http://opensearch.org/Specifications/OpenSearch/1.1/Draft_2"/>
-                    <link rel="search" type="application/opensearchdescription+xml"
-                          href="opensearch.xml" title="Your Elite Fitness Hub"/>
+                    {/*<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>*/}
+                    {/*<link rel="schema.DCMI" href="http://purl.org/dc/dcmitype/"/>*/}
+                    {/*<link rel="schema.AGGREGATION" href="http://purl.org/net/agreemedia/"/>*/}
+                    {/*<link rel="schema.OpenSearch"*/}
+                    {/*      href="http://opensearch.org/Specifications/OpenSearch/1.1/Draft_2"/>*/}
+                    {/*<link rel="search" type="application/opensearchdescription+xml"*/}
+                    {/*      href="opensearch.xml" title="Your Elite Fitness Hub"/>*/}
 
-                    <link rel="canonical"
-                          href="https://www.yourwebsite.com/elite-weight-loss"/>
+                    {/*<link rel="canonical"*/}
+                    {/*      href="https://www.yourwebsite.com/elite-weight-loss"/>*/}
 
 
                     <title>Unlock Rapid Weight Loss: Proven Strategies - Hobfit Transformation</title>
