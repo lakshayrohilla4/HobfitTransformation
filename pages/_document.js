@@ -87,7 +87,7 @@ fbq('track', 'PageView');
                 <Main/>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(ldJsonScript)}}/>
                 <script dangerouslySetInnerHTML={{__html: pixelScript}}/>
-                <noscript><img height="1" width="1" style="display:none"
+                <noscript><img height="1" width="1" style={{display: 'none'}}
                                src="https://www.facebook.com/tr?id=3646692885588971&ev=PageView&noscript=1"
                 /></noscript>
                 <NextScript/>
