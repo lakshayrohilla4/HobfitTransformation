@@ -24,7 +24,7 @@ const NameField = ({name, setName}) => {
                     id={'name'}
                     type="text"
                     placeholder="Enter your name"
-                    className="bg-[#f2f0f0] text-lg"
+                    className="bg-[#f2f0f0] text-lg w-full"
                     value={name}
                     onChange={(e) => {
                         setName(e.target.value);
@@ -98,7 +98,7 @@ const PhoneField = ({countryCode, phone, setPhone}) => {
                     key={'phone'}
                     type="number"
                     placeholder="Enter your phone"
-                    className="bg-[#f2f0f0] text-lg "
+                    className="bg-[#f2f0f0] text-lg w-full"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                 />
@@ -175,7 +175,7 @@ const Question2 = ({ answer2, setAnswer2 }) => {
                     onSelect={onSelect}
                     onRemove={onRemove}
                     displayValue={'name'}
-                    placeholder={'None'}
+                    placeholder={'Select options'}
                     className={'bg-[#f2f0f0] text-lg rounded-lg p-3 border-0'}
                 />
             </div>
@@ -223,7 +223,7 @@ const Question3 = ({answer3, setAnswer3}) => {
                     onSelect={onSelect}
                     onRemove={onRemove}
                     displayValue={'name'}
-                    placeholder={'None'}
+                    placeholder={'Select options'}
                     className={'bg-[#f2f0f0] text-lg rounded-lg p-3'}
                 />
             </div>
@@ -267,7 +267,7 @@ const Question4 = ({answer4, setAnswer4}) => {
                     onSelect={onSelect}
                     onRemove={onRemove}
                     displayValue={'name'}
-                    placeholder={'None'}
+                    placeholder={'Select options'}
                     className={'bg-[#f2f0f0] text-lg rounded-lg p-3'}
                 />
             </div>

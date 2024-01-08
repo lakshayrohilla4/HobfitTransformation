@@ -20,7 +20,7 @@ const Thankyou = () => {
                         for good.
                     </h1>
                     <h6 className={'text-white font-extralight mt-5 lg:text-2xl text-sm'}>
-                        We will contact you shortly.
+                        Our &quot;Health Coach&quot; will get in touch with you shortly.
                     </h6>
                     <h7 className={'text-black rounded-3xl text-center font-semibold mt-5 lg:text-2xl text-sm bg-[#f8ac18] p-3 w-72'}>
                         Submission Successful

@@ -45,7 +45,7 @@ const Hero = () => {
                     Transformation Starts <br /> HERE!
                 </h1>
                 <p className={'font-extralight mt-1 lg:text-xl tex-xs'}>
-                    Join a global community of 100k+ People who
+                    Join a global community of 500k+ People who
                     <br /> have already transformed themselves
                 </p>
             </div>
