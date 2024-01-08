@@ -38,7 +38,9 @@ const Plan = () => {
                     </h1>
                 </div>
                 <div className={'flex flex-col items-center'}>
-                    <Image src={'/assets/FLEXIBLE.png'} alt={'Pro Coaches'} height={200} width={200}/>
+                    <Image src={'/assets/Flexible.png'} alt={'Pro Coaches'} height={200} width={200}
+                           className={'h-[10.9rem]'}
+                    />
                     <h1 className={'lg:text-md text-xs mt-3 text-center text-white font-medium'}>
                         FLEXIBLE TIMING
                     </h1>

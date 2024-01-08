@@ -91,7 +91,7 @@ const PhoneField = ({countryCode, phone, setPhone}) => {
             </label>
             <div className={'bg-[#f2f0f0] mt-1 p-3 rounded-lg flex flex-row space-x-1'}>
                 <p className={'text-black w-10 mt-[0.16rem]'}>
-                    {countryCode}
+                    {countryCode ? countryCode : '+91'}
                 </p>
                 <input
                     id={'phone'}
