@@ -17,7 +17,7 @@ const Thankyou = () => {
                     <h1 className={'text-white font-bold lg:text-5xl text-3xl lg:leading-relaxed mt-5'}>
                         Thanks! You are about <br/>
                         to transform yourself <br />
-                        for good.
+                        for Good ! 💪🏼
                     </h1>
                     <h6 className={'text-white font-extralight mt-5 lg:text-2xl text-sm'}>
                         Our &quot;Health Coach&quot; will get in touch with you shortly.
