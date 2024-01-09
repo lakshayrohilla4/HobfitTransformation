@@ -496,7 +496,7 @@ const Form = () => {
 
         try {
             // Make a POST request to the backend
-            const response = axios.post(formSubmitUrl, formData, {
+            const response = await axios.post(formSubmitUrl, formData, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer acd4cfd7157c9af0922acf9a826591a16655ed43697cb016d0effbe5954d02ba'
