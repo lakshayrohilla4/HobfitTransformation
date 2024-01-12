@@ -502,6 +502,14 @@ const Form = () => {
                     'Authorization': 'Bearer acd4cfd7157c9af0922acf9a826591a16655ed43697cb016d0effbe5954d02ba'
                 },
             });
+            if(typeof window !== 'undefined') {
+                const ReactPixel = require('react-facebook-pixel').default;
+                ReactPixel.init('3646692885588971');
+                ReactPixel.track('Purchase', {
+                    value: 0,
+                    currency: 'INR',
+                });
+            }
 
             // Handle the response here. For example, you can set a success message or redirect the user.
             console.log(response.data);

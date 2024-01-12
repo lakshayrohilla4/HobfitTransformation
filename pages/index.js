@@ -14,18 +14,6 @@ export default function Home() {
     const formRef = useRef(null);
     const scrollToTopRef = useRef(null);
 
-    const pixelScript = `
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '3646692885588971');
-fbq('track', 'PageView');
-        `
 
 
     // hide scrollToTopRef when formRef is in view
@@ -56,17 +44,14 @@ fbq('track', 'PageView');
         };
     }, []);
 
+    useEffect(() => {
+        const ReactPixel = require('react-facebook-pixel').default;
+        ReactPixel.init('3646692885588971');
+        ReactPixel.pageView();
+    }, []);
+
     return (
         <>
-            <Script
-                id={'pixel-script-home'}
-                dangerouslySetInnerHTML={{__html: pixelScript}}
-            />
-            <noscript><img
-                alt={'Facebook Pixel Home'}
-                height="1" width="1" style={{display: 'none'}}
-                           src="https://www.facebook.com/tr?id=3646692885588971&ev=PageView&noscript=1"
-            /></noscript>
             <Header/>
             <Hero/>
             <div className={'flex lg:flex-row lg:flex-nowrap flex-wrap flex-col lg:mt-20 mt-5'}>

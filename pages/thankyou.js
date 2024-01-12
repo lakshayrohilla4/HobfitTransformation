@@ -2,7 +2,9 @@ import Thankyou from "@/components/Thankyou";
 import Transformation from "@/components/Transformation";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
-import Script from "next/script";
+import {useEffect} from "react";
+import {default as ReactPixel} from "react-facebook-pixel";
+
 
 const pixelScript = `
 !function(f,b,e,v,n,t,s)
@@ -18,22 +20,14 @@ fbq('track', 'PageView');
 `
 
 export default function ThankyouPage() {
+    useEffect(() => {
+        const ReactPixel = require('react-facebook-pixel').default;
+        ReactPixel.init('1549540005808951');
+        ReactPixel.pageView();
+    }, []);
+
     return (
         <>
-            <Script
-                id="pixel thank you page"
-                dangerouslySetInnerHTML={{
-                    __html: pixelScript,
-                }}
-            />
-            <noscript>
-                <img
-                    alt={'Facebook Pixel Thankyou'}
-                    height="1" width="1"
-                    style={{display: 'none'}}
-
-                           src="https://www.facebook.com/tr?id=1549540005808951&ev=PageView&noscript=1"
-            /></noscript>
             <Thankyou/>
             <Transformation/>
             <Testimonials/>
