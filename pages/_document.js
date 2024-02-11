@@ -49,7 +49,7 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    <meta name="title" content="Unlock Rapid Weight Loss: Proven Strategies for Success"/>
+                    <meta name="title" content="Hobfit | Online transformation for women"/>
                     <meta name="subject" content="Transform Your Body: Elite Weight Loss and Fitness Insights"/>
                     <meta name="geo.region" content="IN-QA-US-AE-SA-MY-HK-CA"/>
                     <meta name="geo.placename" content="Faridabad, Haryana, India - Be the Change"/>
@@ -81,7 +81,7 @@ class MyDocument extends Document {
                     {/*      href="https://www.yourwebsite.com/elite-weight-loss"/>*/}
 
 
-                    <title>Unlock Rapid Weight Loss: Proven Strategies - Hobfit Transformation</title>
+                    <title>Hobfit | Online transformation for women</title>
                 </Head>
                 <body>
                 <Main/>
