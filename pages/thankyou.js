@@ -3,7 +3,6 @@ import Transformation from "@/components/Transformation";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import {useEffect} from "react";
-import {default as ReactPixel} from "react-facebook-pixel";
 
 
 const pixelScript = `

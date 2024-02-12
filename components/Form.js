@@ -3,7 +3,6 @@ import StepProgressBar from "@/components/StepProgressBar";
 import {Multiselect} from "multiselect-react-dropdown";
 import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
-import {default as ReactPixel} from "react-facebook-pixel";
 const override = {
     display: "block",
     margin: "0 auto",
