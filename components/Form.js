@@ -163,7 +163,7 @@ const Form = () => {
     const formTopRef = useRef(null);
 
     const onSubmit = async () => {
-        if (name === '' || phone === '' || age === '' || disease === '') {
+        if (name === '' || phone === '' || age === '') {
             setError('All fields are mandatory');
             return;
         }
