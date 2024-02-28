@@ -227,7 +227,6 @@ const Question3 = ({answer3, setAnswer3}) => {
                         {name: 'Other', id: 7},
                     ]}
                     showCheckbox={true}
-                    hideSelectedList={true}
                     selectedValues={answer3}
                     onSelect={onSelect}
                     onRemove={onRemove}
@@ -265,7 +264,6 @@ const Question4 = ({answer4, setAnswer4}) => {
                         {name: 'Others', id: 5},
                     ]}
                     selectedValues={answer4}
-                    hideSelectedList={true}
                     showCheckbox={true}
                     onSelect={onSelect}
                     onRemove={onRemove}
@@ -331,6 +329,27 @@ const Question6 = ({answer6, setAnswer6}) => {
     )
 }
 
+const Question7 = ({answer7, setAnswer7}) => {
+    // question is Yes/No on Are you comfortable with paid plans
+    return (
+        <div className={'flex flex-col'}>
+            <label className={'text-black text-lg'}>
+                Are you comfortable with paid plans?
+            </label>
+            <div className={'bg-[#f2f0f0] mt-1 p-3 lg:p-[0.17rem] rounded-lg'}>
+                <select className="bg-[#f2f0f0] text-lg rounded-lg p-3 w-full"
+                        value={answer7}
+                        onChange={(e) => setAnswer7(e.target.value)}
+                >
+                    <option value="">Select an option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+        </div>
+    )
+}
+
 const CountryCodesMap = {
     'India': '+91',
     'USA': '+1',
@@ -384,6 +403,7 @@ const StateForm = (props) => {
                 <div className={'flex flex-col space-y-5 mt-10 lg:w-auto w-11/12'}>
                     <Question5 answer5={props.answer5} setAnswer5={props.setAnswer5}/>
                     <Question6 answer6={props.answer6} setAnswer6={props.setAnswer6}/>
+                    <Question7 answer7={props.answer7} setAnswer7={props.setAnswer7}/>
                 </div>
             )
     }
@@ -403,6 +423,7 @@ const Form = () => {
     const [answer4, setAnswer4] = useState([]);
     const [answer5, setAnswer5] = useState('');
     const [answer6, setAnswer6] = useState('');
+    const [answer7, setAnswer7] = useState('');
     const [loading, setLoading] = useState(false);
     const formTopRef = useRef(null);
 
@@ -484,7 +505,14 @@ const Form = () => {
                 if (answer5 === '') {
                     setError('Please select an answer');
                     return;
-                } else {
+                } else if (answer6 === '') {
+                    setError('Please select an answer');
+                    return;
+                } else if (answer7 === '') {
+                    setError('Please select an answer');
+                    return;
+                }
+                else {
                     handleSubmit();
                 }
                 break;
@@ -570,6 +598,8 @@ const Form = () => {
                 setAnswer5={setAnswer5}
                 answer6={answer6}
                 setAnswer6={setAnswer6}
+                answer7={answer7}
+                setAnswer7={setAnswer7}
             />
             {error && <p className={'text-red-500'}>{error}</p>}
             <div className={'lg:w-full mt-5 flex w-full'}>
