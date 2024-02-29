@@ -7,7 +7,7 @@ const Testimonials = () => {
 
     return (
         <div className={'flex flex-col bg-white mt-20 pb-10'}>
-            <h1 className={'mx-auto text-5xl font-semibold'}>
+            <h1 className={'mx-auto text-3xl lg:text-5xl font-semibold'}>
                 What Our Users Say
             </h1>
 

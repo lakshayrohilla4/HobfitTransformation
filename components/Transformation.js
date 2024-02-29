@@ -7,8 +7,8 @@ const Transformation = () => {
 
     return (
         <section className={'bg-white flex flex-col mt-10'}>
-            <h1 className={'text-black text-5xl font-semibold mx-auto'}>
-                Transformation
+            <h1 className={'text-black text-3xl lg:text-5xl font-semibold mx-auto'}>
+                Transformations
             </h1>
 
             <div className="embla mt-10" ref={emblaRef}>

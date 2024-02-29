@@ -41,7 +41,7 @@ const Hero = () => {
         <div className="bg-[#292e47]  lg:py-28 pt-16 lg:pb-16 pb-8 flex lg:flex-row flex-col flex-wrap lg:flex-nowrap lg:space-x-96">
             <div className="text-white lg:ml-20 lg:w-[60%] ml-5 lg:mt-16">
                 <h1 className="lg:text-5xl text-2xl font-bold ">
-                    <span className="text-[#CB6CE4] font-semibold">Fitness with Fun</span> <br/>
+                    <span className="text-[#CB6CE4] font-semibold uppercase">Fitness with Fun</span> <br/>
                     No Fancy Food. No <br/>
                     Supplements. No Boring <br/>
                     Workouts.
