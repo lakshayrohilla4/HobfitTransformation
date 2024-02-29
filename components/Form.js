@@ -42,7 +42,7 @@ const CountryField = ({country, setCountry}) => {
                 Country
             </label>
             <div
-                className={'bg-[#f2f0f0] mt-1 lg:p-[0.17rem] p-3 rounded-lg'}>
+                className={'bg-[#f2f0f0] mt-1 lg:p-[0.17rem] p-1 rounded-lg'}>
                 <select className="bg-[#f2f0f0] text-black text-lg rounded-lg p-3 w-full"
                         value={country}
                         onChange={(e) => setCountry(e.target.value)}
@@ -68,7 +68,7 @@ const GenderField = ({gender, setGender}) => {
             <label className={' text-lg'}>
                 Gender
             </label>
-            <div className={'bg-[#f2f0f0] mt-1 p-3 lg:p-[0.17rem] rounded-lg'}>
+            <div className={'bg-[#f2f0f0] mt-1 p-1 lg:p-[0.17rem] rounded-lg'}>
                 <select className="bg-[#f2f0f0] text-black text-lg rounded-lg p-3 w-full"
                         value={gender}
                         onChange={(e) => setGender(e.target.value)}
