@@ -7,6 +7,8 @@
    License: none (public domain)
 */
 
+.multiselect-container li:hover { background: #cb6ce4 !important; color: #fff; cursor: pointer; } .highlightOption { background: #cb6ce4; color: #ffffff; }
+
 #__next {
     display: flex;
     flex-direction: column;
@@ -65,7 +67,7 @@
 /*media query for embla slide for mobile screens*/
 @media (max-width: 768px) {
     .embla__slide {
-        flex: 0 0 100%;
+        flex: 0 0 80%;
         min-width: 0;
     }
 }

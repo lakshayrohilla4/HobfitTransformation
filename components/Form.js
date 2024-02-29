@@ -15,7 +15,7 @@ const formSubmitUrl = "https://asia-southeast1-hobitapp-22cb6.cloudfunctions.net
 const NameField = ({name, setName}) => {
     return (
         <div className={'flex flex-col'}>
-            <label className={'text-black text-lg'}>
+            <label className={' text-lg'}>
                 Name
             </label>
             <div className={'bg-[#f2f0f0] mt-1 p-3 rounded-lg'}>
@@ -24,7 +24,7 @@ const NameField = ({name, setName}) => {
                     id={'name'}
                     type="text"
                     placeholder="Enter your name"
-                    className="bg-[#f2f0f0] text-lg w-full"
+                    className="bg-[#f2f0f0] text-black text-lg w-full"
                     value={name}
                     onChange={(e) => {
                         setName(e.target.value);
@@ -38,12 +38,12 @@ const NameField = ({name, setName}) => {
 const CountryField = ({country, setCountry}) => {
     return (
         <div className={'flex flex-col'}>
-            <label className={'text-black text-lg'}>
+            <label className={' text-lg'}>
                 Country
             </label>
             <div
                 className={'bg-[#f2f0f0] mt-1 lg:p-[0.17rem] p-3 rounded-lg'}>
-                <select className="bg-[#f2f0f0] text-lg rounded-lg p-3 w-full"
+                <select className="bg-[#f2f0f0] text-black text-lg rounded-lg p-3 w-full"
                         value={country}
                         onChange={(e) => setCountry(e.target.value)}
                 >
@@ -65,11 +65,11 @@ const CountryField = ({country, setCountry}) => {
 const GenderField = ({gender, setGender}) => {
     return (
         <div className={'flex flex-col'}>
-            <label className={'text-black text-lg'}>
+            <label className={' text-lg'}>
                 Gender
             </label>
             <div className={'bg-[#f2f0f0] mt-1 p-3 lg:p-[0.17rem] rounded-lg'}>
-                <select className="bg-[#f2f0f0] text-lg rounded-lg p-3 w-full"
+                <select className="bg-[#f2f0f0] text-black text-lg rounded-lg p-3 w-full"
                         value={gender}
                         onChange={(e) => setGender(e.target.value)}
                 >
@@ -86,7 +86,7 @@ const GenderField = ({gender, setGender}) => {
 const PhoneField = ({countryCode, phone, setPhone}) => {
     return (
         <div className={'flex flex-col'}>
-            <label className={'text-black text-lg'}>
+            <label className={' text-lg'}>
                 Phone Number
             </label>
             <div className={'bg-[#f2f0f0] mt-1 p-3 rounded-lg flex flex-row space-x-1'}>
@@ -98,7 +98,7 @@ const PhoneField = ({countryCode, phone, setPhone}) => {
                     key={'phone'}
                     type="number"
                     placeholder="Enter your phone"
-                    className="bg-[#f2f0f0] text-lg w-full"
+                    className="bg-[#f2f0f0] text-black text-lg w-full"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                 />
@@ -110,7 +110,7 @@ const PhoneField = ({countryCode, phone, setPhone}) => {
 const AgeField = ({age, setAge}) => {
     return (
         <div className={'flex flex-col'}>
-            <label className={'text-black text-lg'}>
+            <label className={' text-lg'}>
                 Age
             </label>
             <div className={'bg-[#f2f0f0] mt-1 p-3 rounded-lg'}>
@@ -119,7 +119,7 @@ const AgeField = ({age, setAge}) => {
                     key={'age'}
                     type="number"
                     placeholder="Enter your age"
-                    className="bg-[#f2f0f0] text-lg w-full"
+                    className="bg-[#f2f0f0] text-black text-lg w-full"
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
                 />
@@ -132,11 +132,11 @@ const AgeField = ({age, setAge}) => {
 const Question1 = ({answer1, setAnswer1}) => {
     return (
         <div className={'flex flex-col'}>
-            <label className={'text-black text-lg'}>
+            <label className={' text-lg'}>
                 How serious are you to transform yourself?
             </label>
             <div className={'bg-[#f2f0f0] mt-1 p-3 lg:p-[0.17rem] rounded-lg'}>
-                <select className="bg-[#f2f0f0] text-lg rounded-lg p-3 w-full"
+                <select className="bg-[#f2f0f0] text-black text-lg rounded-lg p-3 w-full"
                         value={answer1}
                         onChange={(e) => setAnswer1(e.target.value)}
                 >
@@ -163,11 +163,11 @@ const Question2 = ({ answer2, setAnswer2 }) => {
 
     return (
         <div className={'flex flex-col'}>
-            <label className={'text-black text-lg'}>
+            <label className={' text-lg'}>
                 Do you have any of the following health conditions?
             </label>
             <input className={'w-0 h-0'}/>
-            <div className={'bg-[#f2f0f0] mt-1 p-[0.17rem] rounded-lg lg:w-full w-[22.2rem]'}>
+            <div className={'bg-[#f2f0f0] text-black mt-1 p-[0.17rem] rounded-lg lg:w-full w-[22.2rem]'}>
                 <Multiselect
                     options={[
                         {name: 'None', id: 1},
@@ -182,9 +182,17 @@ const Question2 = ({ answer2, setAnswer2 }) => {
                     ]}
                     style={{
                         borderRadius: '0.5rem',
+                        chips: {
+                            background: '#cb6ce4',
+                            color: 'white',
+                            fontSize: '1rem',
+                            padding: '0.5rem',
+                            margin: '0.2rem'
+                        }
                     }}
                     // hideSelectedList={true}
                     showCheckbox={true}
+                    avoidHighlightFirstOption={true}
                     closeOnSelect={true}
                     selectedValues={answer2}
                     onSelect={onSelect}
@@ -211,11 +219,11 @@ const Question3 = ({answer3, setAnswer3}) => {
 
     return (
         <div className={'flex flex-col'}>
-            <label className={'text-black text-lg'}>
+            <label className={' text-lg'}>
                 Have you attempted any of the following<br/>in the past to lose weight?
             </label>
             <input className={'w-0 h-0'}/>
-            <div className={'bg-[#f2f0f0] mt-1 p-[0.17rem] rounded-lg w-[22.2rem]'}>
+            <div className={'bg-[#f2f0f0] text-black mt-1 p-[0.17rem] rounded-lg w-[22.2rem]'}>
                 <Multiselect
                     options={[
                         {name: 'Never tried to lose earlier', id: 1},
@@ -226,6 +234,17 @@ const Question3 = ({answer3, setAnswer3}) => {
                         {name: 'Yoga/ Dance/ Aerobics', id: 6},
                         {name: 'Other', id: 7},
                     ]}
+                    style={{
+                        borderRadius: '0.5rem',
+                        chips: {
+                            background: '#cb6ce4',
+                            color: 'white',
+                            fontSize: '1rem',
+                            padding: '0.5rem',
+                            margin: '0.2rem'
+                        }
+                    }}
+                    avoidHighlightFirstOption={true}
                     showCheckbox={true}
                     selectedValues={answer3}
                     onSelect={onSelect}
@@ -250,11 +269,11 @@ const Question4 = ({answer4, setAnswer4}) => {
 
     return (
         <div className={'flex flex-col'}>
-            <label className={'text-black text-lg'}>
+            <label className={'text-lg'}>
                 What led to your weight gain?
             </label>
             <input className={'w-0 h-0'}/>
-            <div className={'bg-[#f2f0f0] mt-1 p-[0.17rem] rounded-lg w-[22.2rem]'}>
+            <div className={'bg-[#f2f0f0] text-black mt-1 p-[0.17rem] rounded-lg w-[22.2rem]'}>
                 <Multiselect
                     options={[
                         {name: 'Busy work', id: 1},
@@ -263,6 +282,17 @@ const Question4 = ({answer4, setAnswer4}) => {
                         {name: 'Health conditions (PCOD/Thyroid etc.)', id: 4},
                         {name: 'Others', id: 5},
                     ]}
+                    style={{
+                        borderRadius: '0.5rem',
+                        chips: {
+                            background: '#cb6ce4',
+                            color: 'white',
+                            fontSize: '1rem',
+                            padding: '0.5rem',
+                            margin: '0.2rem'
+                        }
+                    }}
+                    avoidHighlightFirstOption={true}
                     selectedValues={answer4}
                     showCheckbox={true}
                     onSelect={onSelect}
@@ -281,11 +311,11 @@ const Question4 = ({answer4, setAnswer4}) => {
 const Question5 = ({answer5, setAnswer5}) => {
     return (
         <div className={'flex flex-col'}>
-            <label className={'text-black text-lg'}>
+            <label className={' text-lg'}>
                 How busy are you on an average day?
             </label>
             <div className={'bg-[#f2f0f0] mt-1 p-3 lg:p-[0.17rem] rounded-lg'}>
-                <select className="bg-[#f2f0f0] text-lg rounded-lg p-3 w-full overflow-hidden"
+                <select className="bg-[#f2f0f0] text-black text-lg rounded-lg p-3 w-full overflow-hidden"
                         value={answer5}
                         onChange={(e) => setAnswer5(e.target.value)}
                 >
@@ -310,11 +340,11 @@ const Question5 = ({answer5, setAnswer5}) => {
 const Question6 = ({answer6, setAnswer6}) => {
     return (
         <div className={'flex flex-col'}>
-            <label className={'text-black text-lg'}>
+            <label className={'text-lg'}>
                 What is the best time to call you?
             </label>
             <div className={'bg-[#f2f0f0] mt-1 p-3 lg:p-[0.17rem] rounded-lg'}>
-                <select className="bg-[#f2f0f0] text-lg rounded-lg p-3 w-full"
+                <select className="bg-[#f2f0f0] text-black  text-lg rounded-lg p-3 w-full"
                         value={answer6}
                         onChange={(e) => setAnswer6(e.target.value)}
                 >
@@ -333,10 +363,10 @@ const Question7 = ({answer7, setAnswer7}) => {
     // question is Yes/No on Are you comfortable with paid plans
     return (
         <div className={'flex flex-col'}>
-            <label className={'text-black text-lg'}>
+            <label className={' text-lg'}>
                 Are you comfortable with paid plans?
             </label>
-            <div className={'bg-[#f2f0f0] mt-1 p-3 lg:p-[0.17rem] rounded-lg'}>
+            <div className={'bg-[#f2f0f0] text-black mt-1 p-3 lg:p-[0.17rem] rounded-lg'}>
                 <select className="bg-[#f2f0f0] text-lg rounded-lg p-3 w-full"
                         value={answer7}
                         onChange={(e) => setAnswer7(e.target.value)}
@@ -527,12 +557,14 @@ const Form = () => {
             country,
             gender,
             phone: CountryCodesMap[country] + phone,
+            age,
             answer1,
             answer2: answer2.map(item => item.name), // Convert objects to strings
             answer3: answer3.map(item => item.name), // Convert objects to strings
             answer4: answer4.map(item => item.name), // Convert objects to strings
             answer5,
             answer6,
+            answer7,
         };
 
         try {
@@ -569,9 +601,9 @@ const Form = () => {
 
 
     return (
-        <section className={'items-center flex flex-wrap flex-col lg:w-1/2'}>
-            <div className="text-black font-black lg:text-3xl text-2xl leading-snug text-center" ref={formTopRef}>
-                TAKE YOUR FIRST STEP <br/> TOWARDS CHANGE!!
+        <section className={'bg-[#292e47] text-white items-center flex flex-wrap flex-col lg:w-1/2'}>
+            <div className=" font-black lg:text-3xl text-2xl leading-snug text-center" ref={formTopRef}>
+                Take your first step towards <br/> HEALTHIER YOU !!
             </div>
             <StepProgressBar step={page} totalSteps={4}/>
             <StateForm

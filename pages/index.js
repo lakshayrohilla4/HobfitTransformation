@@ -9,6 +9,7 @@ import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import {useEffect, useRef} from "react";
 import Script from "next/script";
+import { FloatingWhatsApp } from 'react-floating-whatsapp'
 
 export default function Home() {
     const formRef = useRef(null);
@@ -52,14 +53,19 @@ export default function Home() {
 
     return (
         <>
+            <FloatingWhatsApp
+                phoneNumber={'+919810244706'}
+                accountName={'Hobfit'}
+                avatar={'https://firebasestorage.googleapis.com/v0/b/hobitapp-22cb6.appspot.com/o/Group%2028525.jpg?alt=media&token=f3231b10-d685-4546-9582-0b31d978cfa9'}
+            />
             <Header/>
             <Hero/>
-            <div className={'flex lg:flex-row lg:flex-nowrap flex-wrap flex-col lg:mt-20 mt-5'}>
+            <div className={'bg-[#292e47] flex lg:flex-row justify-center lg:flex-nowrap flex-wrap flex-col pb-10 '}>
                 <div ref={formRef}/>
                 <Form/>
-                <Stats/>
+                {/*<Stats/>*/}
             </div>
-            <Plan/>
+            {/*<Plan/>*/}
             {/*<Contact />*/}
             <Transformation/>
             <Testimonials/>

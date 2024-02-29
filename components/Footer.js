@@ -22,13 +22,13 @@ const Footer = () => {
             <div className="font-pangram text-xl font-medium text-left mt-5 text-white">
                 Follow Us
                 <div className={'flex flex-row space-x-4 mt-5'}>
-                    <Link href={'https://www.instagram.com/hobfitbyhobit/'} className={'cursor-pointer'} target={'_blank'}>
+                    <Link href={'https://www.instagram.com/getfitwith_hobfit/'} className={'cursor-pointer'} target={'_blank'}>
                         <Image src={'assets/Instagram.svg'} alt={'Instagram'} width={30} height={30} />
                     </Link>
                     <Link href={'https://www.linkedin.com/company/53480889/'} className={'cursor-pointer'} target={'_blank'}>
                         <Image src={'assets/Linkedin.svg'} alt={'Linkedin'} width={30} height={30} />
                     </Link>
-                    <Link href={'https://wa.me/918076258737'} className={'cursor-pointer'} target={'_blank'}>
+                    <Link href={'https://wa.me/919810244706'} className={'cursor-pointer'} target={'_blank'}>
                         <Image src={'assets/Whatsapp.svg'} alt={'WhatsApp'} width={30} height={30} />
                     </Link>
                 </div>
