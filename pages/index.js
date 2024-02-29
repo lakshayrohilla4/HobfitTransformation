@@ -18,32 +18,32 @@ export default function Home() {
 
 
     // hide scrollToTopRef when formRef is in view
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    scrollToTopRef.current.style.display = 'none';
-                } else {
-                    scrollToTopRef.current.style.display = 'block';
-                }
-            },
-            {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            }
-        );
-
-        if (formRef.current) {
-            observer.observe(formRef.current);
-        }
-
-        return () => {
-            if (formRef.current) {
-                observer.unobserve(formRef.current);
-            }
-        };
-    }, []);
+    // useEffect(() => {
+    //     const observer = new IntersectionObserver(
+    //         ([entry]) => {
+    //             if (entry.isIntersecting) {
+    //                 scrollToTopRef.current.style.display = 'none';
+    //             } else {
+    //                 scrollToTopRef.current.style.display = 'block';
+    //             }
+    //         },
+    //         {
+    //             root: null,
+    //             rootMargin: '0px',
+    //             threshold: 0.1
+    //         }
+    //     );
+    //
+    //     if (formRef.current) {
+    //         observer.observe(formRef.current);
+    //     }
+    //
+    //     return () => {
+    //         if (formRef.current) {
+    //             observer.unobserve(formRef.current);
+    //         }
+    //     };
+    // }, []);
 
     useEffect(() => {
         const ReactPixel = require('react-facebook-pixel').default;
@@ -71,20 +71,20 @@ export default function Home() {
             <Testimonials/>
             <Footer/>
             {/*    Scroll to top absolute div*/}
-            <div
-                ref={scrollToTopRef}
-                className={'fixed bottom-5 right-5 bg-[#292e20] rounded-full p-3 cursor-pointer'} onClick={() => {
-                formRef.current?.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center',
-                })
-            }}>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none"
-                     viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                          d="M5 15l7-7 7 7"/>
-                </svg>
-            </div>
+            {/*<div*/}
+            {/*    ref={scrollToTopRef}*/}
+            {/*    className={'fixed bottom-5 right-5 bg-[#292e20] rounded-full p-3 cursor-pointer'} onClick={() => {*/}
+            {/*    formRef.current?.scrollIntoView({*/}
+            {/*        behavior: 'smooth',*/}
+            {/*        block: 'center',*/}
+            {/*    })*/}
+            {/*}}>*/}
+            {/*    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none"*/}
+            {/*         viewBox="0 0 24 24" stroke="currentColor">*/}
+            {/*        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}*/}
+            {/*              d="M5 15l7-7 7 7"/>*/}
+            {/*    </svg>*/}
+            {/*</div>*/}
         </>
     )
 }
