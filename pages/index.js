@@ -54,6 +54,7 @@ export default function Home() {
     return (
         <>
             <FloatingWhatsApp
+                notificationDelay={10}
                 phoneNumber={'+919810244706'}
                 accountName={'Hobfit'}
                 avatar={'https://firebasestorage.googleapis.com/v0/b/hobitapp-22cb6.appspot.com/o/Group%2028525.jpg?alt=media&token=f3231b10-d685-4546-9582-0b31d978cfa9'}
