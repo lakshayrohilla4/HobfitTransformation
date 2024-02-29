@@ -402,13 +402,13 @@ const StateForm = (props) => {
                     <div className={'space-y-5'}>
                         <NameField key={'name'} name={props.name} setName={props.setName}/>
                         <CountryField country={props.country} setCountry={props.setCountry}/>
-                        <AgeField age={props.age} setAge={props.setAge}/>
+                        <PhoneField countryCode={CountryCodesMap[props.country]} phone={props.phone} setPhone={props.setPhone}/>
                     </div>
 
 
                     <div className={'space-y-5'}>
                         <GenderField gender={props.gender} setGender={props.setGender}/>
-                        <PhoneField countryCode={CountryCodesMap[props.country]} phone={props.phone} setPhone={props.setPhone}/>
+                        <AgeField age={props.age} setAge={props.setAge}/>
                     </div>
 
 
