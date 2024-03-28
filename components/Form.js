@@ -569,12 +569,12 @@ const Form = () => {
 
         try {
             if(typeof window !== 'undefined') {
-                const ReactPixel = require('react-facebook-pixel').default;
-                ReactPixel.init('3646692885588971');
-                ReactPixel.track('Purchase', {
-                    value: 0,
-                    currency: 'INR',
-                });
+                // const ReactPixel = require('react-facebook-pixel').default;
+                // ReactPixel.init('3646692885588971');
+                // ReactPixel.track('Purchase', {
+                //     value: 0,
+                //     currency: 'INR',
+                // });
             }
             // Make a POST request to the backend
             const response = await axios.post(formSubmitUrl, formData, {

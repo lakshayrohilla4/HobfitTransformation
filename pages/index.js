@@ -47,7 +47,7 @@ export default function Home() {
 
     useEffect(() => {
         const ReactPixel = require('react-facebook-pixel').default;
-        ReactPixel.init('3646692885588971');
+        ReactPixel.init('712123561131539');
         ReactPixel.pageView();
     }, []);
 
