@@ -56,6 +56,9 @@ const CountryField = ({country, setCountry}) => {
                     <option value={"Malaysia"}>Malaysia</option>
                     <option value={"Hong Kong"}>Hong Kong</option>
                     <option value={"Canada"}>Canada</option>
+                    <option value={"Singapore"}>Singapore</option>
+                    <option value={"Bahrain"}>Bahrain</option>
+                    <option value={"Australia"}>Australia</option>
                 </select>
             </div>
         </div>
